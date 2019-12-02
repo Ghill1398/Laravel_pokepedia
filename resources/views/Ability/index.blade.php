@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Document</title>
-</head>
-<body>
-    <div>
-       <div>
-         <br>
+@extends('layouts.app')
+@section("aquiva")
+<div class="container">
+   <div class="row">
+      <div class="col-4">
          <h3>  Lista Habilidades </h3>
          <br>
          <div align="right">
          <a href="{{route('ability.create')}}">Crear</a>
          </div>
-         <table>
+         <table class="table">
             <tr>
                <th>Id</th>
                <th>Habilidad</th>
@@ -29,5 +22,4 @@
          </table>
        </div>
     </div>
-</body>
-</html>
+@endsection
