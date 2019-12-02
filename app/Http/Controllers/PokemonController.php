@@ -54,12 +54,6 @@ class PokemonController extends Controller
         return redirect()->route('pokemon.create');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Pokemon  $pokemon
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $pokemon = Pokemon::find($id);
@@ -76,24 +70,13 @@ class PokemonController extends Controller
         return view ("pokemon.show",compact("pokemon","aux"));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Pokemon  $pokemon
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Pokemon $pokemon)
     {
         $poke=Pokemon::find($pokemon);
         return view("pokemon.edit",compact("poke"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pokemon  $pokemon
-     * @return \Illuminate\Http\Response
-     */
+
     
     public function update(Request $request, Pokemon $pokemon)
     {
