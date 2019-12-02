@@ -40,7 +40,7 @@
 </div>
 
 <div id="test" class="form-group">
-<input type="text" name="idpokemon" class="form-control" value="{{$pokemon->id}}"/>
+<input type="text" name="idpokemon" class="form-control" hidden value="{{$pokemon->id}}"/>
 </div>
 
 <div class="form-group">
