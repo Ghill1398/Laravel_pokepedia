@@ -100,8 +100,7 @@ class PokemonController extends Controller
         $this->validate($request,[
             "nombre" => "required",
             "peso" => "required",
-            "estatura" => "required",
-            "imagen" => "required",
+            "estatura" => "required", 
         ]);
         $pokemon = Pokemon::find($id);
         $pokemon->nombre=$request->get("nombre");

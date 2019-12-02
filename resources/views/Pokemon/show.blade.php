@@ -12,6 +12,7 @@
 <h1>{{$pokemon->nombre}}</h1>
 <a>Peso : {{$pokemon->peso}}</a><br><br>
 <a>Estatura : {{$pokemon->estatura}}</a><br><br>
+<a>Id : {{$pokemon->id}}</a><br><br>
 
 
 <h2>Habilidades</h2>
@@ -28,5 +29,23 @@
    </tr>
 @endforeach
 </table>
+
+<br>
+<h3>Añadir Habilidad</h3>
+<br>
+<form method="post" action="{{url('abilitypokemon')}}">
+@csrf
+<div class="form-group">
+      <input type="text" name="idability" class="form-control" placeholder="Id Habilidad"/>
+</div>
+
+<div id="test" class="form-group">
+<input type="text" name="idpokemon" class="form-control" value="{{$pokemon->id}}"/>
+</div>
+
+<div class="form-group">
+   <input type="submit"/>
+</div>
+</form>
 </body>
 </html>

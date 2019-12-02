@@ -45,7 +45,6 @@ class PostController extends Controller
             ]);
       
             $post = new Post([
-
                 "subject" => $request->get("subject"),
                 "idpokemon" => $request->get("idpokemon"),
                 "content" => $request->get("content"),

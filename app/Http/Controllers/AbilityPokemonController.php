@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AbilityPokemon;
 use Illuminate\Http\Request;
+use Auth;
 
 class AbilityPokemonController extends Controller
 {
@@ -24,7 +25,7 @@ class AbilityPokemonController extends Controller
      */
     public function create()
     {
-        //
+        return view("abilitypokemon.create");
     }
 
     /**
@@ -35,7 +36,23 @@ class AbilityPokemonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Auth::check()) {
+
+            $this->validate( $request, [
+                "idability"=>"required",
+            ]);
+      
+            $comment = new AbilityPokemon([
+                "idability" => $request->get("idability"),
+                "idpokemon" => $request->get("idpokemon"),
+            ]);
+            $comment->save();
+            return redirect()->route('pokemon.index');
+        
+        }
+        else {
+            return "Tienes que estar logeado para poder añadir habilidad";
+        }
     }
 
     /**

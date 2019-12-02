@@ -17,10 +17,12 @@
          </div>
          <table>
             <tr>
+               <th>Id</th>
                <th>Habilidad</th>
             </tr>
          @foreach ($abilities as $ability)
             <tr>
+               <td>{{$ability["id"]}}</td>
                <td>{{$ability["habilidad"]}}</td>
             </tr>
          @endforeach

@@ -9,6 +9,8 @@
 </head>
 
 <body>
+   <script>
+   </script>
 <h1>{{$post->subject}}</h1>
 <a>{{$post->content}}</a><br><br>
 <a>id Pokemon : {{$post->idpokemon}}</a><br><br>
@@ -21,7 +23,7 @@
 <table>
    <tr>
       <th>Idpost</th>
-      <th>idUsuario</th>
+      <th>Nombre Usuario</th>
       <th>content</th>
    </tr>
 @foreach ($aux as $comment)
@@ -32,5 +34,22 @@
    </tr>
 @endforeach
 </table>
+<br>
+<h3>Comentar</h3>
+<br>
+<form method="post" action="{{url('comment')}}">
+@csrf
+<div class="form-group">
+      <input type="text" name="content" class="form-control" placeholder="Comentario"/>
+</div>
+
+<div id="test" class="form-group">
+<input type="text" name="idpost" class="form-control" hidden value="{{$post->id}}"/>
+</div>
+
+<div class="form-group">
+   <input type="submit"/>
+</div>
+</form>
 </body>
 </html>

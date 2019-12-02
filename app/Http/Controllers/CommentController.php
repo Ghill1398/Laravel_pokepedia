@@ -36,22 +36,23 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         if (Auth::check()) {
-            $id = \Auth::user()->id;
+            $idUser = \Auth::user()->id;
 
             $this->validate( $request, [
                 "content"=>"required",
             ]);
       
             $comment = new Comment([
-                "idpost" => $id,
-                "idusuario" => $id,
+                "idpost" => $request->get("idpost"),
+                "idusuario" => $idUser,
                 "content" => $request->get("content"),
             ]);
             $comment->save();
-            return redirect()->route('comment.create');
+            return redirect()->route('post.index');
+        
         }
         else {
-            return "Tienes que estar logeado para poder comentar";
+            return "Tienes que estar logeado para poder publicar post";
         }
     }
 

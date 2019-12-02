@@ -19,6 +19,7 @@ Route::resource('pokemon', "PokemonController");
 Route::resource('ability', "AbilityController");
 Route::resource('post', "PostController");
 Route::resource('comment', "CommentController");
+Route::resource('abilitypokemon', "AbilityPokemonController");
 
 Auth::routes();
 

@@ -26,11 +26,11 @@
                <input type="text" name="estatura" class="form-control" placeholder="Estatura"/>
          </div>
          <div class="form-group">
-               <input type="text" name="imagen" class="form-control" placeholder="Imagen"/>
+               <input type="file" name="imagen" class="form-control" placeholder="Imagen"/>
          </div>
          <div class="form-group">
                <input type="submit"/>
-            </div>
+         </div>
       </form>
       </div>
    </div>
