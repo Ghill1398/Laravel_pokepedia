@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2019 a las 20:20:38
+-- Tiempo de generación: 02-12-2019 a las 22:23:20
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -44,7 +44,9 @@ INSERT INTO `abilities` (`id`, `habilidad`, `created_at`, `updated_at`) VALUES
 (2, 'Habilidad 2', '2019-11-28 17:46:24', '2019-11-28 17:46:24'),
 (3, 'Habilidad 3', '2019-11-28 17:46:29', '2019-11-28 17:46:29'),
 (4, 'Habilidad 4', '2019-11-28 18:08:11', '2019-11-28 18:08:11'),
-(5, 'Habilidad 5', '2019-11-28 18:09:11', '2019-11-28 18:09:11');
+(5, 'Habilidad 5', '2019-11-28 18:09:11', '2019-11-28 18:09:11'),
+(6, 'Habilidad 6', '2019-11-30 15:27:24', '2019-11-30 15:27:24'),
+(7, 'Habilidad 7', '2019-12-02 20:09:16', '2019-12-02 20:09:16');
 
 -- --------------------------------------------------------
 
@@ -64,7 +66,9 @@ CREATE TABLE `ability_pokemon` (
 
 INSERT INTO `ability_pokemon` (`id`, `idability`, `idpokemon`) VALUES
 (1, 1, 1),
-(2, 2, 1);
+(2, 2, 1),
+(3, 4, 2),
+(4, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -85,7 +89,13 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`id`, `idpost`, `idusuario`, `content`) VALUES
 (1, 1, 1, 'Comentario 1'),
-(2, 1, 1, 'Comentario 2');
+(2, 1, 1, 'Comentario 2'),
+(3, 1, 1, 'Contenido'),
+(4, 1, 1, 'Buen comentario'),
+(16, 1, 1, 'Contenido2'),
+(17, 1, 1, 'Wow'),
+(18, 1, 1, 'lel'),
+(19, 3, 1, 'buen post');
 
 -- --------------------------------------------------------
 
@@ -165,7 +175,8 @@ INSERT INTO `pokemon` (`id`, `nombre`, `peso`, `estatura`, `imagen`, `created_at
 (2, 'pokemon2', 12.00, 12.00, '12', '2019-11-23 11:03:16', '2019-11-23 11:03:16'),
 (3, 'pokemon3', 12.00, 12.00, '12', '2019-11-23 16:00:11', '2019-11-23 16:00:11'),
 (4, 'pokemon4', 11.00, 11.00, '11', '2019-11-27 17:18:09', '2019-11-27 17:18:09'),
-(5, 'pokemon5', 23.00, 100.00, '112', '2019-11-28 18:07:45', '2019-11-28 18:07:45');
+(7, 'Antonio', 123.00, 123.00, '123', '2019-11-30 10:16:42', '2019-11-30 10:16:42'),
+(15, 'jesus', 12.00, 12.00, 'PSCS6.exe', '2019-11-30 15:26:26', '2019-11-30 15:26:26');
 
 -- --------------------------------------------------------
 
@@ -291,19 +302,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `abilities`
 --
 ALTER TABLE `abilities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `ability_pokemon`
 --
 ALTER TABLE `ability_pokemon`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `failed_jobs`
@@ -321,7 +332,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `pokemon`
 --
 ALTER TABLE `pokemon`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `posts`
